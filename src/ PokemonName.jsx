@@ -1,14 +1,14 @@
 import React from 'react'
-import { createFragmentName } from 'react-relay'
+import { createFragmentContainer } from 'react-relay'
 import graphql from 'babel-plugin-relay/macro'
 
 function PokemonName({ pokemon }) {
   return <div>{pokemon.name}</div>
 }
 
-export default createFragmentName(PokemonName, {
+export default createFragmentContainer(PokemonName, {
   pokemon: graphql`
-    fragment PokemonName_name on Pokemon {
+    fragment PokemonName_pokemon on Pokemon {
       name
     }
   `,
